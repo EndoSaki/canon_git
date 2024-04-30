@@ -1,26 +1,32 @@
 package p01;
 
 public class Sample28 {
+	
 	public static void main(String[] args) {
-		int a = 10;
-		kudo(a);
-		
-		int result = oku();
+		//メソッドの呼び出し
+		oku();
+		kudo(-10, 20);
+		int result = endo(100, 200);
 		System.out.println(result);
-		
-	
+		System.out.println(endo(1, 2));
 	}
-	static void kudo(int x) {
-			System.out.println(x);
 	
+	//メソッドの定義
+	static void oku() {
+		System.out.println("よろしく！");
+		return;
+	}
+	
+	static void kudo(int x, int y) {
+		if (x < 0) {
+			return;
 		}
-	static int oku() {
-		return 10;
-
-	}
-
 		
+		System.out.println(x + y);
+	}
+	
+	static int endo(int x, int y) {
+		return x + y;
 	}
 
-
-
+}

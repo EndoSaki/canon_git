@@ -3,66 +3,68 @@ package kadai6add;
 import java.util.Scanner;
 
 public class PlayGame {
-	private static Human[] partyList;
+	private static Scanner scan;
+	private static Human[] list;
 
 	public static void main(String[] args) {
-		Scanner scan = new Scanner(System.in);
-		System.out.println("===パーティを作成します===");
-		//Human[] partyList = new Warrior[3];
-		partyList =new Human[3];
-
-		for (int i = 0; i < partyList.length; i++) {
-			System.out.println("どちら(1.市民 2.戦士)を作成しますか:");
-			int b = scan.nextInt();
-//			Human h1 =new Warrior();
-//			Warrior h = (Warrior)h1;
+		//キーボード入力のおまじない
+		scan = new Scanner(System.in);
+		
+		//パーティ３名を格納するHumanクラス型の配列の宣言
+		list = new Human[3];
+		
+		System.out.println("=== パーティを作成します ===");
+		
+		for (int i = 0; i < list.length; i++) {
+			System.out.print("どちら（1:市民 2:戦士）を作成しますか：");
+			int num = scan.nextInt();
 			
-			if (b == 1) {
-				System.out.println("名前:");
-				String c = scan.next();
-				partyList[i]  = new Human(c);
+			System.out.print("名前：");
+			String name = scan.next();
+			
+			if (num == 1) {
+				list[i] = new Human(name);
+			} else if (num == 2) {
+				System.out.print("種別：");
+				String type = scan.next();
 				
-			}
-			if (b == 2) {
-				System.out.println("名前:");
-				String d = scan.next();
-				System.out.println("種別:");
-				String e = scan.next();
-				partyList[i] = new Warrior(e, d);
+				list[i] = new Warrior(name, type);
 			}
 			
 		}
-		System.out.println("===パーティを作成しました===");
-		int f;
-
+		
+		System.out.println("=== パーティを作成しました ===");
+		
+		int selNo = -1;
+		
 		do {
-			System.out.println("操作（1:一覧表示 2:攻撃 9:終了）を選択してください：");
-			f = scan.nextInt();
-
-			if (f == 1) {
-				itiran(partyList);
-
-			}
-			if (f == 2) {
-				kougeki(partyList);
+			System.out.print("操作（1:一覧表示 2:攻撃 9:終了）を選択してください：");
+			selNo = scan.nextInt();
 			
+			switch (selNo) {
+			case 1:
+				displayList();
+				break;
+			case 2:
+				attackList();
+				break;
 			}
-
-		} while (f != 9);
-
+			
+			System.out.println();
+			
+		} while (selNo != 9);
 	}
-
-	static void itiran(Human[] partyList) {
-		for (Human customer : partyList) {
-			customer.info();
+	
+	public static void displayList() {
+		for (Human h : list) {
+			h.info();
 		}
 	}
-	static void kougeki(Human[] partyList) {
-		for (Human customer : partyList) {
-			customer.attack();
+	
+	public static void attackList() {
+		for (Human h : list) {
+			h.attack();
 		}
-	
-	
 	}
 
 }

@@ -1,19 +1,20 @@
 package kadai6add;
 
 public class Warrior extends Human {
-	private String type;
+	//フィールド
+	private String type; //種別
 
+	//コンストラクタ
 	public Warrior() {
-		super();
 		
 	}
-
-	public Warrior(String name,String type) {
+	
+	public Warrior(String name, String type) {
 		super(name);
 		this.type = type;
-		
 	}
 
+	//セッタ＆ゲッタ
 	public String getType() {
 		return type;
 	}
@@ -22,11 +23,16 @@ public class Warrior extends Human {
 		this.type = type;
 	}
 	
+	//infoメソッド
 	public void info() {
-		System.out.println("種別:"+ type + "名前:"+getName() );
-		
+		System.out.print("種別：" + type + "　");
+		super.info();
 	}
-	public void attack(String type) {
-		System.out.println("「"+type +"」は攻撃した");
+	
+	//attackメソッド
+	public void attack() {
+		System.out.print("「" + type + "」は");
+		super.attack();
 	}
+	
 }

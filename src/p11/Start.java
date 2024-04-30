@@ -6,14 +6,12 @@ public class Start {
 		//Cameraクラスを継承したMobileクラスのインスタンスを生成
 		Mobile m = new Mobile();
 		
-		 //フィールドとメソッドにアクセス
-		m.telNo = "090-6666-4444";
-		m.maker = "Canon";
+		//フィールドとメソッドにアクセス
+		m.telNo = "090-1234-5678";
+		m.maker = "キヤノン";
 		
 		m.talk();
 		m.takePicture();
-		
-		
 	}
 
 }

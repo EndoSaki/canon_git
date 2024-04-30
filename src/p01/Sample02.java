@@ -1,16 +1,18 @@
 package p01;
 
-public class Sample02 {	
+public class Sample02 {
+	
 	public static void main(String[] args) {
-		long a =2_200_000_000L;
-		double b =3.14;
-		float c =3.14f;
-		boolean d = true;
+		String name = "山田太郎";
+		int age = 23;
 		
-		System.out.println (a);
-		System.out.println (b);
-		System.out.println (c);
-		System.out.println (d);
+		//char c = 0x41;
+		//char c = 0b0100_0001;
+		char c = 'あ';
+		
+		System.out.println("名前：" + name);
+		System.out.println("年齢：" + age);
+		System.out.println(c);
 	}
 
 }

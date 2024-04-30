@@ -6,49 +6,38 @@ import java.util.Scanner;
 public class Game1 {
 
 	public static void main(String[] args) {
+		//キーボード入力のおまじない
 		Scanner scan = new Scanner(System.in);
 		
-		int b = a();
+		//乱数を発生させるおまじない
+		Random rand = new Random();
+		int com = rand.nextInt(100); //0～99の乱数を発生させる
 		
-		System.out.println(b);
+		System.out.println("コンピュータの数値：" + com);
 		
-		//System.out.print("数字を入力してください：");
-		int c = 0;// = scan.nextInt();
+		int count = 0;
 		
-		int count =0;
-		 do{
+		while (true) {
+			System.out.print("数字を入力してください：");
+			int user = scan.nextInt();
+			
 			count++;
-			System.out.println("数字を入力してください：");
-			 c = scan.nextInt();
-			 
-		}while(kazu(b, c));
-		
-		scan.close();
-		System.out.println("大当たりです");
-		System.out.println(count+"回で当たりました！");		
-
-	}
-	static int a() {
-		return new Random().nextInt(100);
-		
-		
-	}
-	static boolean kazu(int b, int x) {
-		//int b =a();
-		
-		if( b < x) {
-			System.out.println("**大きすぎです**");
-			return true;
 			
-		}else if(b > x){
-			System.out.println("**小さすぎです**");
-			return true;
+			if (user > com) {
+				System.out.println("** 大きすぎです **");
+			}
 			
-		}else {
-			return false;
-		
+			if (user < com) {
+				System.out.println("** 小さすぎです **");
+			}
+			
+			if (user == com) {
+				break;
+			}
+			
 		}
 		
+		System.out.println(count + "回で当たりました！");
 	}
 
 }

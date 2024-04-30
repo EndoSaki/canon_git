@@ -1,10 +1,12 @@
 package p18;
 
 public class Human {
-	String name;
-	int age;
+	//フィールド
+	String name; //名前
+	int age;     //年齢
 	
-	 void eat() {
+	//メソッド
+	protected void eat() {
 		System.out.println("食事中です");
 	}
 }

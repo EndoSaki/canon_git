@@ -2,18 +2,20 @@ package kadai6;
 
 public class Book extends Item {
 	//フィールド
-	private String author;
+	private String author; //著者
 	
 	//コンストラクタ
 	public Book() {
-		super();
-	}
 
-	public Book(String name, int price,String author) {
+	}
+	
+	public Book(String name, int price, String author) {
 		super(name, price);
+		
 		this.author = author;
 	}
 
+	//セッタ＆ゲッタ	
 	public String getAuthor() {
 		return author;
 	}
@@ -21,13 +23,11 @@ public class Book extends Item {
 	public void setAuthor(String author) {
 		this.author = author;
 	}
-	
-	void showInfo() {
+
+	//showInfoメソッド
+	public void showInfo() {
 		super.showInfo();
-		System.out.println("著者::"+author);
+		
+		System.out.println("著　者：" + author);
 	}
-	
-	
-	
-	
 }

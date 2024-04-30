@@ -1,30 +1,22 @@
 package p01;
 
 public class Sample29 {
-	public static void main(String[] args) {
-		int[] list= {10,20,30};
-		
-		kudo(list);
-		
-		int[] ary= endo();
-		for(int date:ary) {
-			System.out.println(date);}
-	}
-
-
-	static void kudo(int[] list) {
-		for(int date:list) {
-			System.out.println(date);
 	
-		}
+	public static void main(String[] args) {
+		int a = 10;
+		kudo(a);
 		
+		int result = oku();
+		System.out.println(result);
+	}
+	
+	//メソッドの定義
+	static void kudo(int x) {
+		System.out.println(x);
 	}
 
-	static int[] endo() {
-		int[] ary= {100,200,300};
-		
-		return ary;
-
+	static int oku() {
+		return 10;
 	}
 
 }

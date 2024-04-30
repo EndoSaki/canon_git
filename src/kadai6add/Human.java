@@ -1,29 +1,35 @@
 package kadai6add;
 
 public class Human {
-	private String name;
+	//フィールド
+	private String name; //名前
 
+	//コンストラクタ
 	public Human() {
-		super();
 		
 	}
+	
 	public Human(String name) {
-		super();
-		this.name =name;
-		
+		this.name = name;
 	}
+
+	//セッタ＆ゲッタ
 	public String getName() {
 		return name;
 	}
+
 	public void setName(String name) {
 		this.name = name;
 	}
 	
+	//infoメソッド
 	public void info() {
-		System.out.println("名前:"+ name);
+		System.out.println("名前：" + name);
 	}
 	
+	//attackメソッド
 	public void attack() {
 		System.out.println("攻撃した");
 	}
+	
 }
